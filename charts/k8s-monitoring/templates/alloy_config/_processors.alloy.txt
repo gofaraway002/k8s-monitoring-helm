@@ -69,7 +69,7 @@ otelcol.processor.k8sattributes "default" {
 {{- if .Values.traces.enabled }}
     traces  = [
       otelcol.processor.transform.default.input, 
-    {{- if .Values.metrics.enabled }}
+    {{- if and .Values.metrics.enabled .Values.traces.hostInfoMetrics.enabled }}
       otelcol.connector.host_info.default.input,
     {{- end }}
     ]
@@ -77,7 +77,7 @@ otelcol.processor.k8sattributes "default" {
   }
 }
 
-{{- if and .Values.metrics.enabled .Values.traces.enabled }}
+{{- if and .Values.metrics.enabled .Values.traces.enabled .Values.traces.hostInfoMetrics.enabled }}
 otelcol.connector.host_info "default" {
   host_identifiers = [ "k8s.node.name" ]
   output {

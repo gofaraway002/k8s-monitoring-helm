@@ -637,10 +637,16 @@
                             "type": "object",
                             "properties": {
                                 "excludeMetrics": {
-                                    "type": "array"
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
                                 },
                                 "includeMetrics": {
-                                    "type": "array"
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
                                 },
                                 "useDefaultAllowList": {
                                     "type": "boolean"
@@ -1297,24 +1303,6 @@
                             "type": "string"
                         }
                     }
-                },
-                "alloy": {
-                    "properties": {
-                        "metricsTuning": {
-                            "properties": {
-                                "excludeMetrics": {
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "includeMetrics": {
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1643,6 +1631,14 @@
             "properties": {
                 "enabled": {
                     "type": "boolean"
+                },
+                "hostInfoMetrics": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        }
+                    }
                 },
                 "receiver": {
                     "type": "object",

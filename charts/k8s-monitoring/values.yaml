@@ -816,6 +816,10 @@ traces:
   # -- Receive and forward traces.
   enabled: false
 
+  hostInfoMetrics:
+    # -- Generate host info metrics from trace data.
+    enabled: false
+
   # Settings related to traces ingested via receivers
   receiver:
     # -- Apply a filter to traces received via the OTLP or OTLP HTTP receivers. ([docs](https://grafana.com/docs/alloy/latest/reference/components/otelcol.processor.filter/))
