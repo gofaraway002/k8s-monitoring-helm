@@ -452,7 +452,7 @@ The Prometheus and Loki services may be hosted on the same cluster, or remotely 
 | test.nodeSelector | object | `{"kubernetes.io/os":"linux"}` | nodeSelector to apply to the test job. |
 | test.tolerations | list | `[]` | Tolerations to apply to the test job. |
 | traces.enabled | bool | `false` | Receive and forward traces. |
-| traces.hostInfoMetrics.enabled | bool | `false` | Generate host info metrics from trace data. |
+| traces.grafanaCloudMetrics.enabled | bool | `true` | Generate host info metrics from trace data, used in Application Observability in Grafana Cloud. |
 | traces.receiver.filters | object | `{"span":[],"spanevent":[]}` | Apply a filter to traces received via the OTLP or OTLP HTTP receivers. ([docs](https://grafana.com/docs/alloy/latest/reference/components/otelcol.processor.filter/)) |
 | traces.receiver.transforms | object | `{"resource":[],"span":[],"spanevent":[]}` | Apply a transformation to traces received via the OTLP or OTLP HTTP receivers. ([docs](https://grafana.com/docs/alloy/latest/reference/components/otelcol.processor.transform/)) |
 

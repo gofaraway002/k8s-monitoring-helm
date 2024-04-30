@@ -1632,7 +1632,7 @@
                 "enabled": {
                     "type": "boolean"
                 },
-                "hostInfoMetrics": {
+                "grafanaCloudMetrics": {
                     "type": "object",
                     "properties": {
                         "enabled": {
