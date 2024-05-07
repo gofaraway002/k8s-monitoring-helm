@@ -1402,6 +1402,8 @@ opencost:
     nodeSelector:
       kubernetes.io/os: linux
 
+kepler:
+  enabled: false
 
 # Settings for the Grafana Alloy instance that gathers metrics, and opens receivers for application data.
 # See https://github.com/grafana/alloy/tree/main/operations/helm/charts/alloy for available values.
