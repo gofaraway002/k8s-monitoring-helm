@@ -18,6 +18,11 @@ discovery.relabel "kepler" {
     action = "keep"
   }
 {{- end }}
+  rule {
+    source_labels = ["__meta_kubernetes_pod_node_name"]
+    action = "replace"
+    target_label = "instance"
+  }
 {{- if .Values.metrics.extraRelabelingRules }}
 {{ .Values.metrics.extraRelabelingRules | indent 2 }}
 {{- end }}
