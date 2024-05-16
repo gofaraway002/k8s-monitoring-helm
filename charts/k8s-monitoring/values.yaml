@@ -1445,8 +1445,17 @@ opencost:
     nodeSelector:
       kubernetes.io/os: linux
 
+# Settings for the Kepler deployment
+# You can use this sections to make modifications to the Kepler deployment.
+# See https://github.com/sustainable-computing-io/kepler-helm-chart/tree/main/chart/kepler for available values.
 kepler:
+  # -- Should this Helm chart deploy Kepler to the cluster.
+  # Set this to false if your cluster already has Kepler, or if you do not want to scrape metrics from Kepler.
   enabled: false
+
+  # @ignored -- This skips including these values in README.md
+  canMount:
+    usrSrc: false
 
 # Settings for the Grafana Alloy instance that gathers metrics, and opens receivers for application data.
 # See https://github.com/grafana/alloy/tree/main/operations/helm/charts/alloy for available values.
